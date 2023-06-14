@@ -1,21 +1,19 @@
 import React from 'react';
-import axios from 'axios';
+import {
+  Route,
+  Routes,
+} from 'react-router-dom';
+import Auth from './pages/Auth';
+import Registration from './pages/Registration';
+import Home from './pages/Home';
 
 function App() {
-
-  React.useEffect(() => {
-    const fetchHello = async () => {
-      const response = await axios.get('http://localhost:8080/api/hello');
-      console.log(response)
-    }
-
-    fetchHello().then(r => console.log('r: ', r))
-  }, [])
-
   return (
-    <div className="App">
-      <p>Hello world!</p>
-    </div>
+    <Routes>
+      <Route path="/auth" element={<Auth />}></Route>
+      <Route path="/" element={<Registration />}></Route>
+      <Route path="/home" element={<Home />}></Route>
+    </Routes>
   );
 }
 
