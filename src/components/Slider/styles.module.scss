@@ -1,0 +1,127 @@
+.root {
+  display: flex;
+  height: 90vh;
+  background-image: url("https://media.cntraveler.com/photos/641bafd0428c1c5485f37616/16:9/w_2580,c_limit/Dinan-france-GettyImages-1155533043.jpg");
+  background-position: center;
+  background-size: cover;
+
+  .shadow {
+    display: flex;
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, .7);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+    }
+
+    h1 {
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 50px;
+      margin-top: 10px;
+    }
+
+    button {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      color: #22b3c1;
+      border: 2px solid #22b3c1;
+      background-color: unset;
+      cursor: pointer;
+      transition: 200ms ease-in-out;
+
+      &:hover {
+        background-color: #22b3c1;
+        color: #fff;
+      }
+    }
+
+    .info {
+      margin-top: 80px;
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      background-color: #fff;
+      padding: 30px 60px;
+      border-radius: 80px;
+      align-items: center;
+      justify-content: space-between;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-left: 50px;
+
+          div {
+            display: flex;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #22b3c1;
+            margin-right: 20px;
+
+            img {
+              width: 28px;
+              height: 28px;
+            }
+          }
+
+          b {
+            display: flex;
+            flex-direction: column;
+
+            span {
+              color: #afafaf;
+              font-size: 12px;
+              font-family: 'Poppins', sans-serif;
+              font-weight: lighter;
+              margin-bottom: 5px;
+            }
+
+            p {
+              margin: 0;
+              color: #22b3c1;
+              font-family: 'Poppins', sans-serif;
+              font-weight: bold;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      .explore {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        padding: 8px 30px;
+        border-radius: 30px;
+        border: 2px solid #22b3c1;
+        background-color: #22b3c1;
+        color: #fff;
+        height: 50px;
+        transition: 200ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background-color: unset;
+          color: #22b3c1;
+        }
+      }
+    }
+  }
+}
