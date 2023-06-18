@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './styles.module.scss'
-import { Link, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  useNavigate,
+} from 'react-router-dom';
 import axios from 'axios';
 
 const Registration = () => {
@@ -11,19 +14,25 @@ const Registration = () => {
   const lastNameRef = React.useRef();
 
   const onSignUpClick = async () => {
-    const data = {
-      "email": emailRef.current.value,
-      "password": passwordRef.current.value,
-      "firstName": firstNameRef.current.value,
-      "lastName": lastNameRef.current.value,
-      "userRole": "USER"
-    }
 
-    const response = await axios.post("http://localhost:8080/api/user/register", data)
+    try {
+      const data = {
+        'email': emailRef.current.value,
+        'password': passwordRef.current.value,
+        'firstName': firstNameRef.current.value,
+        'lastName': lastNameRef.current.value,
+        'userRole': 'USER',
+      }
 
-    if (response.status === 200) {
-      window.localStorage.setItem("user", response.data.id)
-      return navigate("/home")
+      const response = await axios.post('http://localhost:8080/api/user/register', data).catch((err) => alert(err.response.data))
+
+      if (response.status === 200) {
+        window.localStorage.setItem('userId', response.data.id)
+        return navigate('/home')
+      } else {
+        alert(response.data)
+      }
+    } catch (e) {
     }
   }
 
@@ -33,7 +42,7 @@ const Registration = () => {
       <div className={styles.registrFrom}>
         <div className={styles.inputBlock}>
           <p>Your email</p>
-          <input type="text" ref={emailRef} />
+          <input type="email" ref={emailRef} />
         </div>
         <div className={styles.inputBlock}>
           <p>Your password</p>

@@ -125,3 +125,13 @@
     }
   }
 }
+
+@media (max-width: 1050px) {
+  .root {
+    .shadow {
+      .info {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 150px;
+
+  h2 {
+    color: #afafaf;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    width: 451px;
+  }
+
+  p {
+    font-size: 15px;
+    color: #afafaf;
+    font-family: 'Poppins', sans-serif;
+    width: 451px;
+  }
+
+  .tours {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 780px) {
+  .root {
+    padding: 10px 20px;
+  }
+}

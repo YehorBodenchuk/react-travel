@@ -12,14 +12,19 @@ const Auth = () => {
   const passwordRef = React.useRef();
 
   const onSighInClick = async () => {
-    const response = await axios.post("http://localhost:8080/api/user/auth", {
-      "email": emailRef.current.value,
-      "password": passwordRef.current.value
-    })
-
+    try {
+      const response = await axios.post("http://localhost:8080/api/user/auth", {
+        "email": emailRef.current.value,
+        "password": passwordRef.current.value
+      })
     if (response.status === 200) {
-      window.localStorage.setItem("user", response.data)
+      window.localStorage.setItem("userId", response.data.id)
       return navigate("/home")
+    } else {
+      alert("Something went wrong! Please check your input")
+    }
+    } catch (e) {
+      alert("Something went wrong! Please check your input")
     }
   }
 
@@ -28,7 +33,7 @@ const Auth = () => {
       <h2>Log <span>In</span> Your Account <span>Through</span> This <span>Form</span></h2>
       <div className={styles.inputBlock}>
         <p>Your email</p>
-        <input type="text" ref={emailRef} />
+        <input type="email" ref={emailRef} />
       </div>
       <div className={styles.inputBlock}>
         <p>Your password</p>
